@@ -61,6 +61,9 @@
             background-color: black;
             padding: 5px;
         }
+        button {
+            margin: 5px;
+        }
         .container {
             align-items: center;
         }
@@ -84,6 +87,7 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 10px;
             border-radius: 8px;
+            display: none;
         }
     </style>
 </head>
@@ -103,7 +107,12 @@
             </ul> 
         </nav>
     </header>
-    <div class="description">
+    <div>
+        <button onclick="showDescription('description1')">
+            <h2>Preciona si es tu primera ves aquí</h2>
+        </button>
+    </div>
+    <div id="description1"   class="description">
         <h4>Bienvenidos a Data Soft Moli</h4>
         <h2>En Data Soft Moli, mi pasión por el software y los videojuegos se une para crear un espacio donde la tecnología y el entretenimiento se encuentran. Aquí encontrarás análisis profundos, reseñas honestas y las últimas novedades sobre el mundo del software y los videojuegos.</h2>
         <p>El objetivo es ser tu fuente de confianza para todo lo relacionado con el mundo digital. Desde los desarrollos más innovadores en software hasta los lanzamientos más esperados en el mundo de los videojuegos, Data Soft Moli te mantendrá al día con información actualizada y contenido de calidad.
@@ -111,5 +120,17 @@
         <br><br>Prepárate para sumergirte en artículos detallados, guías útiles y opiniones de expertos que te ayudarán a aprovechar al máximo tu experiencia digital. Data Soft Moli es más que un blog; es una comunidad de entusiastas de la tecnología y los videojuegos.
         <br><br>¡Únete a este emocionante viaje y descubre todo lo que el mundo del software y los videojuegos tiene para ofrecer!</p>
     </div>
+    <script>
+        function showDescription(id) {
+            // Ocultar todas las descripciones
+            var descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(function(desc) {
+                desc.style.display = 'none';
+            });
+            // Mostrar la descripción seleccionada
+            var selectedDescription = document.getElementById(id);
+            selectedDescription.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
